@@ -4,12 +4,7 @@
 
 #ifndef LEETCODE_TEST_206_H
 #define LEETCODE_TEST_206_H
-
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode(int x) : val(x), next(NULL) {}
-};
+#include "common.h"
 
 class Solution {
 public:
