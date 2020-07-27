@@ -1,23 +1,16 @@
 #include <iostream>
-#include "string/20.h"
+#include "string/28.h"
 
 using namespace std;
 
 
 int main() {
     Solution s;
-    string str;
+    string s1, s2;
+    s1 = "hello";
+    s2 = "llo";
 
-    str = "";
-    cout << s.isValid(str) << endl;
+    cout << s.strStr(s1, s2) << endl;
 
-    str = "{}";
-    cout << s.isValid(str) << endl;
-
-    str = "(]";
-    cout << s.isValid(str) << endl;
-
-    str = "{[]}";
-    cout << s.isValid(str) << endl;
     return 0;
 }
