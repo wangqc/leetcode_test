@@ -1,9 +1,12 @@
 #include <iostream>
-#include "linklist/148.h"
+#include "linklist/234.h"
 
 using namespace std;
 
 void print(ListNode* l) {
+    if (l == nullptr) {
+        cout << "nullptr" << endl;
+    }
     while(l) {
         cout << l->val << ",";
         l = l->next;
@@ -13,19 +16,22 @@ void print(ListNode* l) {
 
 int main() {
     Solution s;
-    ListNode* head = new ListNode(1);
-    ListNode* l = head;
-    l->next = new ListNode(2);
-    l = l->next;
-    l->next = new ListNode(5);
-    l = l->next;
-    l->next = new ListNode(3);
-    l = l->next;
-    l->next = new ListNode(4);
+    auto head = new ListNode(1);
+    auto l1 = new ListNode(2);
+    auto l2 = new ListNode(3);
+    auto l3 = new ListNode(3);
+    auto l4 = new ListNode(2);
+    auto l5 = new ListNode(1);
+
+    head->next = l1;
+    l1->next = l2;
+    l2->next = l3;
+    l3->next = l4;
+    l4->next = l5;
 
 
     print(head);
-    print(s.sortList(head));
+    cout << s.isPalindrome(head) << endl;
 
     return 0;
 }
