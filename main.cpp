@@ -1,5 +1,5 @@
 #include <iostream>
-#include "linklist/86.h"
+#include "linklist/148.h"
 
 using namespace std;
 
@@ -15,19 +15,17 @@ int main() {
     Solution s;
     ListNode* head = new ListNode(1);
     ListNode* l = head;
-    l->next = new ListNode(4);
-    l = l->next;
-    l->next = new ListNode(3);
-    l = l->next;
     l->next = new ListNode(2);
     l = l->next;
     l->next = new ListNode(5);
     l = l->next;
-    l->next = new ListNode(2);
+    l->next = new ListNode(3);
+    l = l->next;
+    l->next = new ListNode(4);
 
 
     print(head);
-    print(s.partition(head, 4));
+    print(s.sortList(head));
 
     return 0;
 }
