@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
     Solution s;
-    string ss = "3[a2[c]]";
+    string ss = "5[cd]xyz";
     cout << s.decodeString(ss) << endl;
     return 0;
 }

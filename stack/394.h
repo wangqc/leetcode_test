@@ -13,37 +13,32 @@ using namespace std;
 class Solution {
 public:
     string decodeString(string s) {
-        string ret;
-        stack<string> prev_str_stk;
-        stack<int> dup_num;
+        std::string cur_str = "";
         int num = 0;
-        string str;
-        bool prev_is_not_num = true;
-        for (auto& c : s) {
-            if (c >= '0' and c <= '9') {
-                if (prev_is_not_num) {
-                    prev_str_stk.push(str);
-                    prev_is_not_num = false;
-                }
+        std::stack<std::string> str_stk;
+        std::stack<int> int_stk;
+        for (auto &c : s) {
+            if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+                cur_str += c;
+            } else if (c >= '0' && c <= '9') {
                 num = 10 * num + (c - '0');
             } else if (c == '[') {
-                dup_num.push(num);
-                prev_is_not_num = true;
+                str_stk.push(cur_str);
+                int_stk.push(num);
+                cur_str = "";
                 num = 0;
-            } else if (c == ']') {
-                int repeated_num = dup_num.top();
-                dup_num.pop();
-                std::string ss = "";
-                for (long long i = 0; i < repeated_num; ++i) {
-                    ss += str;
-                }
-                str = prev_str_stk.top() + ss;
-                prev_str_stk.pop();
             } else {
-                str += c;
+                int multi = int_stk.top();
+                int_stk.pop();
+                std::string multi_str = "";
+                for (int i = 0; i < multi; ++i) {
+                    multi_str += cur_str;
+                }
+                cur_str = str_stk.top() + multi_str;
+                str_stk.pop();
             }
         }
-        return str;
+        return cur_str;
     }
 };
 
