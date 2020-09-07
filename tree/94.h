@@ -7,6 +7,7 @@
 
 #include "common.h"
 #include <vector>
+#include <stack>
 
 using namespace std;
 
@@ -25,6 +26,11 @@ public:
         vector<int> v;
         traval(root, v);
         return v;
+    }
+
+    vector<int> inorderTraversalV2(TreeNode* root) {
+
+        stack<TreeNode*> tree_stk;
     }
 };
 
