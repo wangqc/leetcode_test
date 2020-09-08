@@ -1,9 +1,9 @@
 //
-// Created by wangqiucheng on 2020/9/7.
+// Created by wangqiucheng on 2020/9/8.
 //
 
-#ifndef LEETCODE_TEST_94_H
-#define LEETCODE_TEST_94_H
+#ifndef LEETCODE_TEST_145_H
+#define LEETCODE_TEST_145_H
 
 #include "common.h"
 #include <vector>
@@ -12,8 +12,7 @@
 using namespace std;
 
 
-// 树的中序遍历
-// TODO: 莫里斯遍历这个好像也都适用
+// 树的后序遍历
 class Solution {
 public:
     void traval(TreeNode* root, vector<int>& v) {
@@ -21,17 +20,18 @@ public:
             return;
         }
         traval(root->left, v);
-        v.push_back(root->val);
         traval(root->right, v);
+        v.push_back(root->val);
     }
 
-    vector<int> inorderTraversal(TreeNode* root) {
+    vector<int> postorderTraversal(TreeNode* root) {
         vector<int> v;
         traval(root, v);
         return v;
     }
 
-    vector<int> inorderTraversalV2(TreeNode* root) {
+    // 迭代通用模板
+    vector<int> postorderTraversalV2(TreeNode* root) {
         vector<int> v;
         stack<TreeNode*> stk;
         if (!root) {
@@ -41,12 +41,10 @@ public:
         while (!stk.empty()) {
             TreeNode* node = stk.top();
             if (node) {
-                stk.pop();
+                stk.push(nullptr);
                 if (node->right) {
                     stk.push(node->right);
                 }
-                stk.push(node);
-                stk.push(nullptr);
                 if (node->left) {
                     stk.push(node->left);
                 }
@@ -58,6 +56,7 @@ public:
         }
         return v;
     }
+
 };
 
-#endif //LEETCODE_TEST_94_H
+#endif //LEETCODE_TEST_145_H

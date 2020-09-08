@@ -1,9 +1,9 @@
 //
-// Created by wangqiucheng on 2020/9/7.
+// Created by wangqiucheng on 2020/9/8.
 //
 
-#ifndef LEETCODE_TEST_94_H
-#define LEETCODE_TEST_94_H
+#ifndef LEETCODE_TEST_144_H
+#define LEETCODE_TEST_144_H
 
 #include "common.h"
 #include <vector>
@@ -12,7 +12,7 @@
 using namespace std;
 
 
-// 树的中序遍历
+// 树的前序遍历
 // TODO: 莫里斯遍历这个好像也都适用
 class Solution {
 public:
@@ -20,23 +20,25 @@ public:
         if (!root) {
             return;
         }
-        traval(root->left, v);
         v.push_back(root->val);
+        traval(root->left, v);
         traval(root->right, v);
     }
 
-    vector<int> inorderTraversal(TreeNode* root) {
+    vector<int> preorderTraversal(TreeNode* root) {
         vector<int> v;
         traval(root, v);
         return v;
     }
 
-    vector<int> inorderTraversalV2(TreeNode* root) {
+
+    // 使用迭代方法也是有基本套路的
+    vector<int> preorderTraversalV2(TreeNode* root) {
         vector<int> v;
-        stack<TreeNode*> stk;
         if (!root) {
             return v;
         }
+        stack<TreeNode*> stk;
         stk.push(root);
         while (!stk.empty()) {
             TreeNode* node = stk.top();
@@ -45,11 +47,11 @@ public:
                 if (node->right) {
                     stk.push(node->right);
                 }
-                stk.push(node);
-                stk.push(nullptr);
                 if (node->left) {
                     stk.push(node->left);
                 }
+                stk.push(node);
+                stk.push(nullptr);
             } else {
                 stk.pop();
                 v.push_back(stk.top()->val);
@@ -58,6 +60,7 @@ public:
         }
         return v;
     }
+
 };
 
-#endif //LEETCODE_TEST_94_H
+#endif //LEETCODE_TEST_144_H
