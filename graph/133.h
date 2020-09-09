@@ -7,6 +7,8 @@
 
 #include "common.h"
 #include <map>
+#include <queue>
+#include <set>
 
 // 图遍历, dfs + bfs
 
@@ -33,7 +35,31 @@ public:
     }
 
     Node* cloneGraphV2(Node* node) {
+        if (!node) {
+            return nullptr;
+        }
+        Node* clone_node = new Node(node->val);
+        visited[node] = clone_node;
+        set<Node*> finish_node;
 
+        queue<Node*> que;
+        que.push(node);
+        while (!que.empty()) {
+            Node* cur = que.front();
+            que.pop();
+            if (finish_node.find(cur) != finish_node.end()) {
+                continue;
+            }
+            for (auto& neightbour : cur->neighbors) {
+                if (visited.find(neightbour) == visited.end()) {
+                    visited[neightbour] = new Node(neightbour->val);
+                }
+                visited[cur]->neighbors.emplace_back(visited[neightbour]);
+                que.push(neightbour);
+            }
+            finish_node.insert(cur);
+        }
+        return visited[node];
     }
 };
 

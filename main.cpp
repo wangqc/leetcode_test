@@ -1,12 +1,19 @@
 #include <iostream>
-#include "stack/394.h"
+#include "back_trace/77.h"
 #include <string>
 
 using namespace std;
 
 int main() {
     Solution s;
-    string ss = "5[cd]xyz";
-    cout << s.decodeString(ss) << endl;
+    int n = 4;
+    int k = 2;
+    vector<vector<int>> ret = s.combine(n, k);
+    for (auto& v : ret) {
+        for (auto& e : v) {
+            cout << e << ",";
+        }
+        cout << endl;
+    }
     return 0;
 }
