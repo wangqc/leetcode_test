@@ -19,6 +19,7 @@ public:
             return;
         }
         for (int i = 0; i < nums.size(); ++i) {
+            // 最关键的一步， 排序后然后保证重复的都是从左到右依次加入就行
             if (vis[i] == 1 || (i > 0 && nums[i] == nums[i-1] && vis[i-1] == 0)) {
                 continue;
             }
