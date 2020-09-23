@@ -40,21 +40,21 @@ public:
                 int r = que.front().first;
                 int c = que.front().second;
                 que.pop();
-                if (r - 1 >= 0 && matrix[r-1][c] == 1 && ret[r-1][c] == 0) {
-                    ret[r-1][c] = dist;
-                    que.push(make_pair(r-1, c));
+                if (r - 1 >= 0 && matrix[r - 1][c] == 1 && ret[r - 1][c] == 0) {
+                    ret[r - 1][c] = dist;
+                    que.push(make_pair(r - 1, c));
                 }
-                if (r + 1 < r_size && matrix[r+1][c] == 1 && ret[r+1][c] == 0) {
-                    ret[r+1][c] = dist;
-                    que.push(make_pair(r+1, c));
+                if (r + 1 < r_size && matrix[r + 1][c] == 1 && ret[r + 1][c] == 0) {
+                    ret[r + 1][c] = dist;
+                    que.push(make_pair(r + 1, c));
                 }
-                if (c - 1 >= 0 && matrix[r][c-1] == 1 && ret[r][c-1] == 0) {
-                    ret[r][c-1] = dist;
-                    que.push(make_pair(r, c-1));
+                if (c - 1 >= 0 && matrix[r][c - 1] == 1 && ret[r][c - 1] == 0) {
+                    ret[r][c - 1] = dist;
+                    que.push(make_pair(r, c - 1));
                 }
-                if (c + 1 < c_size && matrix[r][c+1] == 1 && ret[r][c+1] == 0) {
-                    ret[r][c+1] = dist;
-                    que.push(make_pair(r, c+1));
+                if (c + 1 < c_size && matrix[r][c + 1] == 1 && ret[r][c + 1] == 0) {
+                    ret[r][c + 1] = dist;
+                    que.push(make_pair(r, c + 1));
                 }
             }
             dist++;
@@ -76,19 +76,19 @@ public:
             return;
         }
         dfs(matrix, mem, i + 1, j);
-        dfs(matrix, mem, i, j+1);
+        dfs(matrix, mem, i, j + 1);
         int min = INT32_MAX;
-        if (i - 1 >= 0 && mem[i-1][j] < min) {
-            min = mem[i-1][j];
+        if (i - 1 >= 0 && mem[i - 1][j] < min) {
+            min = mem[i - 1][j];
         }
-        if (j - 1 >= 0 && mem[i][j-1] < min) {
-            min = mem[i][j-1];
+        if (j - 1 >= 0 && mem[i][j - 1] < min) {
+            min = mem[i][j - 1];
         }
-        if (i + 1 < matrix.size() && mem[i+1][j] < min) {
-            min = mem[i+1][j];
+        if (i + 1 < matrix.size() && mem[i + 1][j] < min) {
+            min = mem[i + 1][j];
         }
-        if (j + 1 < matrix[0].size() && mem[i][j+1] < min) {
-            min = mem[i][j+1];
+        if (j + 1 < matrix[0].size() && mem[i][j + 1] < min) {
+            min = mem[i][j + 1];
         }
         mem[i][j] = min + 1;
     }
@@ -98,21 +98,36 @@ public:
         if (matrix.empty()) {
             return vector<vector<int>>();
         }
-        vector<vector<int>> mem(matrix.size(), vector<int>(matrix[0].size(), INT32_MAX / 2));
+        vector<vector<int>> dp(matrix.size(), vector<int>(matrix[0].size(), 10000));
         for (int i = 0; i < matrix.size(); ++i) {
-            for (int j = 0; j < matrix.size(); ++j) {
+            for (int j = 0; j < matrix[0].size(); ++j) {
                 if (matrix[i][j] == 0) {
-                    mem[i][j] = 0;
+                    dp[i][j] = 0;
                 }
             }
         }
 
         for (int i = 0; i < matrix.size(); ++i) {
             for (int j = 0; j < matrix[0].size(); ++j) {
-                mem[i][j] =
+                if (i - 1 >= 0) {
+                    dp[i][j] = min(dp[i][j], dp[i - 1][j] + 1);
+                }
+                if (j - 1 >= 0) {
+                    dp[i][j] = min(dp[i][j], dp[i][j - 1] + 1);
+                }
             }
         }
-        return mem;
+        for (int i = matrix.size() - 1; i >= 0; --i) {
+            for (int j = matrix[0].size() - 1; j >= 0; --j) {
+                if (i + 1 < matrix.size()) {
+                    dp[i][j] = min(dp[i][j], dp[i + 1][j] + 1);
+                }
+                if (j + 1 < matrix[0].size()) {
+                    dp[i][j] = min(dp[i][j], dp[i][j + 1] + 1);
+                }
+            }
+        }
+        return dp;
     }
 };
 
