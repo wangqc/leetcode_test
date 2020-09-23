@@ -1,11 +1,12 @@
 #include <iostream>
-#include "bit/201.h"
+#include "binary_search/35.h"
 
 using namespace std;
 
 int main() {
     Solution s;
-    int ret = s.rangeBitwiseAnd(1, 9);
+    vector<int> v{1,3,5,6};
+    int ret = s.searchInsert(v, 7);
     cout << ret << endl;
     return 0;
 }
