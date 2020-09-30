@@ -1,10 +1,10 @@
 #include <iostream>
-#include "dp/62.h"
+#include "dp/70.h"
 
 using namespace std;
 
 int main() {
     Solution s;
-    cout << s.uniquePaths(3,2) << endl;
+    cout << s.climbStairs(10) << endl;
     return 0;
 }
