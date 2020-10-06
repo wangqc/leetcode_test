@@ -1,10 +1,11 @@
 #include <iostream>
-#include "dp/70.h"
+#include "dp/45.h"
 
 using namespace std;
 
 int main() {
     Solution s;
-    cout << s.climbStairs(10) << endl;
+    vector<int> v{7};
+    cout << s.jump(v) << endl;
     return 0;
 }
