@@ -1,10 +1,11 @@
 #include <iostream>
-#include "dp/62.h"
+#include "tree/116.h"
 
 using namespace std;
 
 int main() {
     Solution s;
-    cout << s.uniquePaths(3,2) << endl;
+    Node* root = nullptr;
+    s.connectV2(root);
     return 0;
 }
