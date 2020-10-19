@@ -1,11 +1,12 @@
 #include <iostream>
-#include "tree/116.h"
+#include "string/844.h"
 
 using namespace std;
 
 int main() {
-    Solution s;
-    Node* root = nullptr;
-    s.connectV2(root);
+    Solution S;
+    string s = "";
+    string t = "######";
+    cout << S.backspaceCompare(s, t) << endl;
     return 0;
 }
