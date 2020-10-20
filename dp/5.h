@@ -54,12 +54,25 @@ public:
         return make_pair<int, int>(left+1, right-1);
     }
 
+    // 比较优秀的解法了
     string longestPalindromeV2(string s) {
         int size = s.size();
-        int left, right;
-        for (int i = 0; i < size; ++i) {
-            span(s, i, i);
+        int left = 0, right = 0;
+        for (int i = 1; i < size - 1; ++i) {
+            pair<int, int> p = span(s, i, i);
+            if (p.second - p.first > right - left) {
+                left = p.first;
+                right = p.second;
+            }
         }
+        for (int i = 0; i < size - 1; ++i) {
+            pair<int, int> p = span(s, i, i+1);
+            if (p.second - p.first > right - left) {
+                left = p.first;
+                right = p.second;
+            }
+        }
+        return s.substr(left, right - left + 1);
     }
 };
 
