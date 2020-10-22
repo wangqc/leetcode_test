@@ -1,11 +1,11 @@
 #include <iostream>
-#include "dp/5.h"
+#include "string/6.h"
 
 using namespace std;
 
 int main() {
     Solution S;
-    string t = "bbbbbbbbbbbdasdbbbbbbbbbb";
-    cout << S.longestPalindromeV2(t) << endl;
+    string s = "LEETCODEISHIRING";
+    cout << S.convert(s, 3) << endl;
     return 0;
 }
