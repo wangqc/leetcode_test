@@ -1,11 +1,10 @@
 #include <iostream>
-#include "string/6.h"
+#include "string/38.h"
 
 using namespace std;
 
 int main() {
     Solution S;
-    string s = "LEETCODEISHIRING";
-    cout << S.convert(s, 3) << endl;
+    cout << S.countAndSay(30) << endl;
     return 0;
 }
