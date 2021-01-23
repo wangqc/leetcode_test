@@ -70,5 +70,16 @@ void print2rd(vector<vector<int>>&& nums) {
     print2rd(nums);
 }
 
+void print(const vector<string>& strs) {
+    for (auto& s : strs) {
+        cout << s << ",";
+    }
+    cout << endl;
+}
+
+void print(vector<string>&& strs) {
+    print(strs);
+}
+
 
 #endif //LEETCODE_TEST_COMMON_H
