@@ -5,7 +5,7 @@
 #ifndef LEETCODE_TEST_83_H
 #define LEETCODE_TEST_83_H
 
-#include "common.h"
+#include "../common.h"
 
 class Solution {
 public:

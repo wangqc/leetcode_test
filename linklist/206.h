@@ -4,7 +4,7 @@
 
 #ifndef LEETCODE_TEST_206_H
 #define LEETCODE_TEST_206_H
-#include "common.h"
+#include "../common.h"
 
 class Solution {
 public:

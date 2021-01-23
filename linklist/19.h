@@ -4,8 +4,7 @@
 
 #ifndef LEETCODE_TEST_19_H
 #define LEETCODE_TEST_19_H
-#include "common.h"
-#include <unordered_map>
+#include "../common.h"
 
 
 class Solution {

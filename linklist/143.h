@@ -5,8 +5,7 @@
 #ifndef LEETCODE_TEST_143_H
 #define LEETCODE_TEST_143_H
 
-#include "common.h"
-#include <stack>
+#include "../common.h"
 
 /**
  * Definition for singly-linked list.

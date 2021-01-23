@@ -4,8 +4,7 @@
 
 #ifndef LEETCODE_TEST_141_H
 #define LEETCODE_TEST_141_H
-#include "common.h"
-#include <unordered_set>
+#include "../common.h"
 
 class Solution {
 public:

@@ -4,8 +4,7 @@
 
 #ifndef LEETCODE_TEST_876_H
 #define LEETCODE_TEST_876_H
-#include "common.h"
-#include <unordered_map>
+#include "../common.h"
 
 class Solution {
 public:

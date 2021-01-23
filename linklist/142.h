@@ -5,8 +5,7 @@
 #ifndef LEETCODE_TEST_142_H
 #define LEETCODE_TEST_142_H
 
-#include "common.h"
-#include <set>
+#include "../common.h"
 
 /**
  * Definition for singly-linked list.

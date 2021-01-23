@@ -5,10 +5,7 @@
 #ifndef LEETCODE_TEST_133_H
 #define LEETCODE_TEST_133_H
 
-#include "common.h"
-#include <map>
-#include <queue>
-#include <set>
+#include "../common.h"
 
 // 图遍历, dfs + bfs
 

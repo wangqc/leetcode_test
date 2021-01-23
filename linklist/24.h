@@ -5,7 +5,7 @@
 #ifndef LEETCODE_TEST_24_H
 #define LEETCODE_TEST_24_H
 
-#include "common.h"
+#include "../common.h"
 
 class Solution {
 public:
