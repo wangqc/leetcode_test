@@ -1,21 +1,8 @@
-#include <iostream>
-#include "array/119.h"
-
-using namespace std;
-
-void print(vector<int>& nums) {
-    for (auto &e : nums) {
-        cout << e << ",";
-    }
-    cout << endl;
-}
+#include "array/15.h"
 
 int main() {
     Solution S;
-    for (int i = 1; i <= 10; i++) {
-        vector<int> ret = S.getRow(i);
-        print(ret);
-    }
-    cout << endl;
+    vector<int> n{-4,-2,-2,-2,0,1,2,2,2,3,3,4,4,6,6};
+    print2rd(S.threeSum(n));
     return 0;
 }
