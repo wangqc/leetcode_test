@@ -1,8 +1,7 @@
-#include "string/17.h"
+#include "string/22.h"
 
 int main() {
     Solution S;
-    string s = "433452";
-    print(S.letterCombinations(s));
+    print(S.generateParenthesis(3));
     return 0;
 }
