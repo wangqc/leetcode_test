@@ -1,8 +1,9 @@
-#include "array/448.h"
+#include "bit/461.h"
+
+#include "common.h"
 
 int main() {
     Solution S;
-    vector<int> nums{4,3,2,7,8,2,3,1};
-    print(S.findDisappearedNumbers(nums));
+    print(S.hammingDistanceV3(-11111,4));
     return 0;
 }

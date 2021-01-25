@@ -5,6 +5,7 @@
 #ifndef LEETCODE_TEST_COMMON_H
 #define LEETCODE_TEST_COMMON_H
 
+#include <bitset>
 #include <string>
 #include <vector>
 #include <map>
