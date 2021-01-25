@@ -1,8 +1,9 @@
-#include "array/169.h"
+#include "array/283.h"
 
 int main() {
     Solution S;
-    vector<int> nums{3,34,3,1,3,41,234,23,4,3,1324,12,34,124,12,34,324,1235,1235,12,31,231,23};
-    print(S.majorityElement(nums));
+    vector<int> nums{0,1,0,10,0};
+    S.moveZeroes(nums);
+    print(nums);
     return 0;
 }
