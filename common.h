@@ -14,6 +14,7 @@
 #include <unordered_set>
 #include <stack>
 #include <iostream>
+#include "stdlib.h"
 
 using namespace std;
 
@@ -48,6 +49,10 @@ public:
         neighbors = _neighbors;
     }
 };
+
+void print(int num) {
+    cout << num << endl;
+}
 
 void print(const vector<int>& nums) {
     for (auto& n : nums) {
