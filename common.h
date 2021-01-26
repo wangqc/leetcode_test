@@ -87,5 +87,10 @@ void print(vector<string>&& strs) {
     print(strs);
 }
 
+void print(vector<vector<string>>&& strs) {
+    for (auto& v : strs) {
+        print(v);
+    }
+}
 
 #endif //LEETCODE_TEST_COMMON_H
