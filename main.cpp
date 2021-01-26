@@ -1,9 +1,10 @@
-#include "bit/461.h"
+#include "array/46.h"
 
 #include "common.h"
 
 int main() {
     Solution S;
-    print(S.hammingDistanceV3(-11111,4));
+    vector<int> nums{1,2,3,4};
+    print(S.permute(nums));
     return 0;
 }

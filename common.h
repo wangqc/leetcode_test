@@ -66,14 +66,14 @@ void print(vector<int>&& nums) {
     print(nums);
 }
 
-void print2rd(const vector<vector<int>>& nums) {
+void print(const vector<vector<int>>& nums) {
     for (auto& vec : nums) {
         print(vec);
     }
 }
 
-void print2rd(vector<vector<int>>&& nums) {
-    print2rd(nums);
+void print(vector<vector<int>>&& nums) {
+    print(nums);
 }
 
 void print(const vector<string>& strs) {
