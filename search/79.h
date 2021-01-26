@@ -7,6 +7,9 @@
 
 #include "../common.h"
 
+// 比较直观的解法记录于back_trace中
+// https://leetcode-cn.com/problems/word-search/
+
 class Solution {
 public:
     bool exist(vector<vector<char>>& board, string word) {
