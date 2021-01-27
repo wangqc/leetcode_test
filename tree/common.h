@@ -5,6 +5,10 @@
 #ifndef LEETCODE_TEST_COMMON_H
 #define LEETCODE_TEST_COMMON_H
 
+#include <vector>
+
+using namespace std;
+
 struct TreeNode {
     int val;
     TreeNode *left;
