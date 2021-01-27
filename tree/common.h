@@ -6,6 +6,7 @@
 #define LEETCODE_TEST_COMMON_H
 
 #include <vector>
+#include <iostream>
 
 using namespace std;
 
