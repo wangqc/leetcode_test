@@ -1,11 +1,10 @@
-#include "string/139.h"
+#include "dp/152.h"
 
 #include "common.h"
 
 int main() {
     Solution S;
-    string s = "appleappleappletoo";
-    vector<string> v{"leet", "apple", "too", "leet", "code"};
-    cout << S.wordBreak(s, v) << endl;
+    vector<int> v{2,3,-2,4};
+    cout << S.maxProduct(v);
     return 0;
 }

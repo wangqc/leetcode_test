@@ -15,6 +15,7 @@
 #include <unordered_set>
 #include <stack>
 #include <iostream>
+#include <algorithm>
 #include "stdlib.h"
 
 using namespace std;
