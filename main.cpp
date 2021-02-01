@@ -1,11 +1,10 @@
-#include "dp/221.h"
+#include "array/238.h"
 
 #include "common.h"
 
 int main() {
     Solution S;
-    vector<vector<char>> v{{'0','1','0','1','1','1'},{'0','1','0','1','1','1'},{'0','1','0','1','1','1'}};
-    vector<vector<char>> v2{{'0', '1'}, {'1','0'}};
-    cout << S.maximalSquare(v) << endl;
+    vector<int> v{1,2,3,4,5};
+    print(S.productExceptSelf(v));
     return 0;
 }
