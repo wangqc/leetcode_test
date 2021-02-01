@@ -1,10 +1,11 @@
-#include "array/215.h"
+#include "dp/221.h"
 
 #include "common.h"
 
 int main() {
     Solution S;
-    vector<int> v{3,2,1,34,3,2,2,1,3};
-    cout << S.findKthLargest(v, 10) << endl;
+    vector<vector<char>> v{{'0','1','0','1','1','1'},{'0','1','0','1','1','1'},{'0','1','0','1','1','1'}};
+    vector<vector<char>> v2{{'0', '1'}, {'1','0'}};
+    cout << S.maximalSquare(v) << endl;
     return 0;
 }
