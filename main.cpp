@@ -1,9 +1,10 @@
-#include "dp/279.h"
+#include "array/287.h"
 
 #include "common.h"
 
 int main() {
-    SolutionMath S;
-    cout << S.numSquares(7929) << endl;
+    Solution S;
+    vector<int> v{1,2,1,4,5,3};
+    cout << S.findDuplicate(v) << endl;
     return 0;
 }
