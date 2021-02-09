@@ -1,10 +1,10 @@
-#include "array/287.h"
+#include "dp/122.h"
 
 #include "common.h"
 
 int main() {
-    Solution S;
+    SolutionDP S;
     vector<int> v{1,2,1,4,5,3};
-    cout << S.findDuplicate(v) << endl;
+    cout << S.maxProfitV3(v) << endl;
     return 0;
 }
