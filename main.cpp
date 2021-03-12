@@ -1,12 +1,9 @@
-#include "tree/538.h"
+#include "dp/560.h"
 
 int main() {
-    vector<string> v({"4", "null", "10"});
-    TreeNode* root = build_tree(v);
-    print(root);
+    vector<int> v({1,1,1,1,2});
     Solution s;
-    s.convertBST(root);
-    print(root);
+    cout << s.subarraySum(v, 3) << endl;
     return 0;
 
 }
