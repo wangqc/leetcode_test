@@ -1,14 +1,12 @@
-#include "dp/494.h"
-#include "common.h"
+#include "tree/538.h"
 
 int main() {
-    SolutionGood s;
-    Solution s2;
-    SolutionBetter s3;
-    vector<int> v({0,0,0,0,0,1});
-    print(s.findTargetSumWays(v, 1));
-    print(s2.findTargetSumWays(v, 1));
-    print(s3.findTargetSumWays(v, 1));
+    vector<string> v({"4", "null", "10"});
+    TreeNode* root = build_tree(v);
+    print(root);
+    Solution s;
+    s.convertBST(root);
+    print(root);
     return 0;
 
 }
