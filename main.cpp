@@ -1,9 +1,9 @@
-#include "dp/560.h"
+#include "array/581.h"
 
 int main() {
-    vector<int> v({1,1,1,1,2});
+    vector<int> v({1,1,1,3,4,5,1,2});
     Solution s;
-    cout << s.subarraySum(v, 3) << endl;
+    cout << s.findUnsortedSubarray(v) << endl;
     return 0;
 
 }
