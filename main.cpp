@@ -1,9 +1,9 @@
-#include "array/581.h"
+#include "tree/331.h"
 
 int main() {
-    vector<int> v({1,1,1,3,4,5,1,2});
-    Solution s;
-    cout << s.findUnsortedSubarray(v) << endl;
+    string s = "9,3,4,#,#,1,#,#,2,#,6,#,#";
+    Solution S;
+    cout << S.isValidSerialization(s) << endl;
     return 0;
 
 }
