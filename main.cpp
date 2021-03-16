@@ -1,8 +1,8 @@
-#include "sword/10.h"
+#include "sword/10-2.h"
 
 int main() {
     Solution s;
-    cout << s.fib(100) << endl;
+    cout << s.numWays(10) << endl;
     return 0;
 
 }
