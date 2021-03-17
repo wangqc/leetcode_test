@@ -1,8 +1,8 @@
-#include "sword/10-2.h"
+#include "binary_search/29.h"
 
 int main() {
     Solution s;
-    cout << s.numWays(10) << endl;
+    print(s.divide(INT_MIN, 2));
     return 0;
 
 }
