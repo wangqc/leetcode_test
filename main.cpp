@@ -1,8 +1,8 @@
-#include "binary_search/29.h"
+#include "binary_search/50.h"
 
 int main() {
     Solution s;
-    print(s.divide(INT_MIN, 2));
+    print(s.myPow(0.3, INT_MAX));
     return 0;
 
 }

@@ -56,6 +56,10 @@ void print(int num) {
     cout << num << endl;
 }
 
+void print(double num) {
+    cout << num << endl;
+}
+
 void print(const vector<double>& nums) {
     for (auto& n : nums) {
         cout << n << ",";
