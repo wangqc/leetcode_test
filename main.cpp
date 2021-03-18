@@ -1,8 +1,9 @@
-#include "binary_search/50.h"
+#include "binary_search/74.h"
 
 int main() {
     Solution s;
-    print(s.myPow(0.3, INT_MAX));
+    vector<vector<int>> v({{1,20}});
+    cout << s.searchMatrix(v, 21) << endl;
     return 0;
 
 }
