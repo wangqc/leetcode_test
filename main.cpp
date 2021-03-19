@@ -1,9 +1,8 @@
-#include "binary_search/74.h"
+#include "binary_search/209.h"
 
 int main() {
     Solution s;
-    vector<vector<int>> v({{1,20}});
-    cout << s.searchMatrix(v, 21) << endl;
+    vector<int> v({2,3,1,2,4,3});
+    print(s.minSubArrayLen(30, v));
     return 0;
-
 }
