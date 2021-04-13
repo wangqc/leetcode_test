@@ -1,8 +1,7 @@
-#include "binary_search/209.h"
+#include "dfs/60.h"
 
 int main() {
-    string s = "acbd";
-    sort(s.begin(), s.end());
-    cout << s << endl;
+    Solution s;
+    cout << s.getPermutation(1, 1) << endl;
     return 0;
 }
