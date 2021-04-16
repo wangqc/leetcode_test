@@ -5,7 +5,7 @@
 #ifndef LEETCODE_TEST_78_H
 #define LEETCODE_TEST_78_H
 
-#include <vector>
+#include "../common.h"
 
 using namespace std;
 
@@ -43,6 +43,27 @@ public:
             back_track(nums, i + 1, tmp_vec, ret_vec);
             tmp_vec.pop_back();
         }
+    }
+};
+
+
+class SolutionTwo {
+public:
+    vector<vector<int>> ret;
+    void dfs(const vector<int>& nums, int cur_idx, vector<int> path) {
+        if (cur_idx == nums.size()) {
+            ret.push_back(path);
+            return;
+        }
+        dfs(nums, cur_idx + 1, path);
+        path.push_back(nums[cur_idx]);
+        dfs(nums, cur_idx + 1, path);
+    }
+
+    vector<vector<int>> subsets(vector<int>& nums) {
+        vector<int> path;
+        dfs(nums, 0, path);
+        return ret;
     }
 };
 
