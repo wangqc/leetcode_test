@@ -26,6 +26,7 @@ public:
     }
 
     vector<vector<int>> subsetsWithDup(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
         vector<int> path;
         dfs(nums, 0, path, false);
         return ret;
