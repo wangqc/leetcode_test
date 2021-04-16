@@ -1,10 +1,15 @@
-#include "dfs/784.h"
+#include "dfs/39.h"
+
 
 int main() {
-    Solution s;
-    vector<string> ret = s.letterCasePermutation("3abc");
-    for (auto& s : ret) {
-        cout << s << endl;
+    SolutionTwo s;
+    vector<int> v({2,3,6,7});
+    auto ret = s.combinationSum(v, 7);
+    for (auto& vec : ret) {
+        for (auto& e : vec) {
+            cout << e << ",";
+        }
+        cout << endl;
     }
     return 0;
 }
