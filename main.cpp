@@ -1,9 +1,9 @@
-#include "dfs/78.h"
+#include "dfs/90.h"
 
 int main() {
-    SolutionTwo s;
-    vector<int> v({1,2,3});
-    auto ret = s.subsets(v);
+    Solution s;
+    vector<int> v({1,2,2,3});
+    auto ret = s.subsetsWithDup(v);
     for (auto& vec : ret) {
         for (auto& e : vec) {
             cout << e << ",";
