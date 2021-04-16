@@ -1,10 +1,8 @@
-#include "dfs/39.h"
-
+#include "dfs/216.h"
 
 int main() {
     SolutionTwo s;
-    vector<int> v({2,3,6,7});
-    auto ret = s.combinationSum(v, 7);
+    auto ret = s.combinationSum3(3, 7) ;
     for (auto& vec : ret) {
         for (auto& e : vec) {
             cout << e << ",";
