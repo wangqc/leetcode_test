@@ -51,4 +51,44 @@ private:
 };
 
 
+
+class SolutionTwo {
+public:
+    bool dfs(const vector<vector<char>>& board, string word, int idx, vector<vector<bool>>& visited, int row, int col) {
+        if (visited[row][col] ||  board[row][col] != word[idx]) {
+            return false;
+        }
+        if (idx == word.size() - 1) {
+            return true;
+        }
+        visited[row][col] = true;
+        if ((row + 1 < board.size() && dfs(board, word, idx + 1, visited, row + 1, col)) ||
+            (col + 1 < board[0].size() && dfs(board, word, idx + 1, visited, row, col + 1)) ||
+            (row - 1 >= 0 && dfs(board, word, idx + 1, visited, row - 1, col)) ||
+            (col - 1 >= 0 && dfs(board, word, idx + 1, visited, row, col - 1))) {
+            return true;
+        }
+        visited[row][col] = false;
+        return false;
+    }
+
+    bool exist(vector<vector<char>>& board, string word) {
+        if (board.empty() || board[0].empty()) {
+            return false;
+        }
+        if (word.empty()) {
+            return false;
+        }
+        vector<vector<bool>> visited(board.size(), vector<bool>(board[0].size(), false));
+        for (int i = 0; i < board.size(); ++i) {
+            for (int j = 0; j < board[0].size(); ++j) {
+                if (dfs(board, word, 0, visited, i, j)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+};
+
 #endif //LEETCODE_TEST_79_H

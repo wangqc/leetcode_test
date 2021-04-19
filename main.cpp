@@ -1,14 +1,8 @@
-#include "dfs/90.h"
+#include "dfs/79.h"
 
 int main() {
-    Solution s;
-    vector<int> v({1,2,2,3});
-    auto ret = s.subsetsWithDup(v);
-    for (auto& vec : ret) {
-        for (auto& e : vec) {
-            cout << e << ",";
-        }
-        cout << endl;
-    }
+    SolutionTwo s;
+    vector<vector<char>> v({{'a','b','c','e'},{'s','f','c','s'},{'a','d','e','e'}});
+    cout << s.exist(v, "abcb") << endl;
     return 0;
 }
