@@ -44,7 +44,7 @@ public:
         return dummy_head_node->next;
     }
 
-    ListNode* reverseBetween(ListNode* head, int m, int n) {
+    ListNode* reverseBetweenBefore(ListNode* head, int m, int n) {
         if (!head || !head->next) {
             return head;
         }
@@ -69,6 +69,14 @@ public:
         prev_n_tail->next = reverseList(n_head);
 
         return dummy_node->next;
+    }
+
+
+    ListNode* reverseBetween(ListNode* head, int m, int n) {
+        if (!head || !head->next) {
+            return head;
+        }
+
     }
 
 private:
