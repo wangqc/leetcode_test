@@ -9,7 +9,7 @@
 
 using namespace std;
 
-class Solution {
+class SolutionOld {
 public:
     // 二维dp
     bool canPartition(vector<int>& nums) {
@@ -73,6 +73,57 @@ public:
             for (int j = target; j >= num; --j) {
                 dp[j] = dp[j] | dp[j-num];
             }
+        }
+        return dp[target];
+    }
+};
+
+class SolutionMoreSpace {
+public:
+    bool canPartition(vector<int>& nums) {
+        int sum = 0;
+        for (auto& n : nums) {
+            sum += n;
+        }
+        if (sum & 0x1) return false;
+        int target = sum >> 1;
+        vector<vector<bool>> dp(nums.size(), vector<bool>(target + 1, false));
+        if (nums[0] < target) {
+            dp[0][nums[0]] = true;
+        }
+        for (int i = 1; i < nums.size(); ++i) {
+            for (int j = 0; j <= target; ++j) {
+                dp[i][j] = dp[i-1][j];
+                if (j == nums[i]) {
+                    dp[i][j] = true;
+                    continue;
+                }
+                if (nums[i] < j) {
+                    dp[i][j] |= dp[i-1][j-nums[i]];
+                }
+            }
+        }
+        return dp[len - 1][target];
+    }
+};
+
+class Solution {
+public:
+    bool canPartition(vector<int>& nums) {
+        int sum = 0;
+        for (auto& n : nums) {
+            sum += n;
+        }
+        if (sum % 2 == 1) return false;
+        int target = sum >> 1;
+        vector<bool> dp(target + 1, false);
+        dp[0] = true;
+        int len = nums.size();
+        for (int i = 0; i < len; ++i ) {
+            for (int j = target; j >= nums[i]; --j) {
+                dp[j] = dp[j] || dp[j - nums[i]];
+            }
+            if (dp[target]) return true;
         }
         return dp[target];
     }
